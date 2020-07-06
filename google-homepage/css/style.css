@@ -1,6 +1,7 @@
 html {
   height: 100%;
   min-height: 100%;
+  width: auto;
   box-sizing: border-box;
 }
 
@@ -9,7 +10,6 @@ html {
   grid-template-columns: 50px 50px 1fr 50px 50px 50px 70px;
   grid-template-rows: 50px;
   grid-template-areas: "about store . gmail images grid-menu sign-in";
-
 }
 
 #about {
@@ -76,7 +76,7 @@ a {
   grid-template-rows: 250px 50px 50px;
   grid-template-areas: 
   ". logo ."
-  ". search ."
+  ". search-bar ."
   ". container ."
 }
 
@@ -86,20 +86,91 @@ a {
   align-self: flex-end;
   padding-bottom: 18px;
 }
+#search-bar:hover {
+  box-shadow: 0 1px 6px 0 rgba(32,33,36,0.28)
+}
+#search-bar {
+  grid-area: search-bar;
+  background: #fff;
+    display: flex;
+    border: 1px solid #dfe1e5;
+    box-shadow: none;
+    border-radius: 24px;
+    z-index: 3;
+    height: 44px;
+    margin: 0 auto;
+    width: 582px;
+}
+#search-icon {
+  display: flex;
+  align-items: center;
+  padding-right: 13px;
+  padding-left: 10px;
+  opacity: 0.5;
+  margin-top: -5px
+}
+#voice-search {
+  display: flex;
+  align-items: center;
+  vertical-align: middle;
+  border: 0;
+  background: transparent;
+  outline: none;
+  overflow: hidden;
+  padding: 10px 10px;
+  margin-top: -5px;
+  cursor: pointer;
+  line-height: 44px;;
+}
 #search {
-  grid-area: search;
-  justify-self: center;
-  align-self: center;
-  width: 550px;
-  height: 44px;
-  border: 1px solid #dfe1e5;
-  box-shadow: none;
-  margin: 0 auto;
-  padding: 0;
-  color: rgba(0,0,0,.87);
-  border-radius: 24px;
-  font-size: small;
-  font-family: Arial, sans-serif;
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+}
+#search-text {
+  flex: 100%;
+  white-space: pre;
+  font: 16px arial,sans-serif;
+  line-height: 34px;
+  height: 34px !important;
+  left: 0;
+  margin: auto 0;
+}
+div {
+  display: block;
+}
+#search-input {
+  background-color: transparent;
+    border: none;
+    margin: 0;
+    padding: 0;
+    color: rgba(0,0,0,.87);
+    outline: none;
+    display: flex;
+    flex: 100%;
+    -webkit-tap-highlight-color: transparent;
+    margin-top: -37px;
+    font-size: 16px;
+    font: 16px arial,sans-serif;
+    line-height: 34px;
+    height: 34px !important;
+}
+#search-input:focus {
+  -webkit-writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    color: -internal-light-dark-color(black, white);
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    -webkit-appearance: textfield;
+    background-color: -internal-light-dark-color(rgb(255, 255, 255), rgb(59, 59, 59));
+    -webkit-rtl-ordering: logical;
+    cursor: text;
+    width: 487px;
 }
 #container {
   grid-area: container;
