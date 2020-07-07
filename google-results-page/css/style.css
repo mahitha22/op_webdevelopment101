@@ -194,7 +194,7 @@ html {
     grid-area: grid-menu-container;
     justify-self: center;
     align-self: center;
-    background-image: url("/images/i1_1967ca6a.png");
+    background-image: url("./images/i1_1967ca6a.png");
     background-size: 528px 68px;
     opacity: 0.55;
     width: 30px;
